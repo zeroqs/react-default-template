@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react'
+import type { FC, ReactNode } from 'react';
 
-import { ProviderProps } from '@/shared/types'
+import type { ProviderProps } from '@/shared/types';
 
 interface Props {
   wrappers: FC<ProviderProps>[]
@@ -9,8 +9,8 @@ interface Props {
 
 export const WrapperComposer = ({ wrappers, render }: Props) => {
   const composedWrapper = wrappers.reduceRight((acc, Wrapper) => {
-    return <Wrapper>{acc}</Wrapper>
-  }, render())
+    return <Wrapper>{acc}</Wrapper>;
+  }, render());
 
-  return <>{composedWrapper}</>
-}
+  return <>{composedWrapper}</>;
+};

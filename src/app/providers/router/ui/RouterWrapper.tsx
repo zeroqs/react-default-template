@@ -1,7 +1,7 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
-import { ProviderProps } from '@/shared/types'
+import type { ProviderProps } from '@/shared/types';
 
 export const RouterWrapper = ({ children }: ProviderProps) => {
-  return <BrowserRouter>{children}</BrowserRouter>
-}
+  return <BrowserRouter>{children}</BrowserRouter>;
+};

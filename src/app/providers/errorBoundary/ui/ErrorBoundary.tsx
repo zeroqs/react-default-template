@@ -1,7 +1,8 @@
-import { Component, ErrorInfo, ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import type { ErrorInfo, ReactNode } from 'react';
+import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import { ProviderProps } from '@/shared/types'
+import type { ProviderProps } from '@/shared/types';
 
 interface ErrorBoundaryProps {
   children: ReactNode
@@ -17,17 +18,17 @@ export class ErrorBoundaryComponent extends Component<
   ErrorBoundaryState
 > {
   static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error }
+    return { hasError: true, error };
   }
 
-  state: ErrorBoundaryState = { hasError: false }
+  state: ErrorBoundaryState = { hasError: false };
 
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error(error, info)
+    console.error(error, info);
   }
 
   render() {
-    const { hasError, error } = this.state
+    const { hasError, error } = this.state;
     if (hasError) {
       return (
         <div
@@ -36,21 +37,20 @@ export class ErrorBoundaryComponent extends Component<
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
-            height: '100dvh',
+            height: '100dvh'
           }}
         >
           <h1>🛠️ Error 🛠️</h1>
           <h2>{error?.message}</h2>
-          <Link to="/">Вернуться на главную</Link>
+          <Link to='/'>Вернуться на главную</Link>
         </div>
-      )
+      );
     }
 
-    // eslint-disable-next-line react/destructuring-assignment
-    return this.props.children
+    return this.props.children;
   }
 }
 
 export const ErrorBoundary = ({ children }: ProviderProps) => {
-  return <ErrorBoundaryComponent>{children}</ErrorBoundaryComponent>
-}
+  return <ErrorBoundaryComponent>{children}</ErrorBoundaryComponent>;
+};

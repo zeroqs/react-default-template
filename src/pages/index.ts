@@ -1,4 +1,4 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-export const HomePage = lazy(() => import('./Home'))
-export const ErrorPage = lazy(() => import('./Error'))
+export const HomePage = lazy(() => import('./Home'));
+export const ErrorPage = lazy(() => import('./Error'));

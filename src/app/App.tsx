@@ -1,6 +1,6 @@
-import { WrapperComposer } from '@/shared/lib/ProviderList'
+import { WrapperComposer } from '@/shared/lib/ProviderList';
 
-import { AppRouter, ErrorBoundary, RouterWrapper } from './providers'
+import { AppRouter, ErrorBoundary, RouterWrapper } from './providers';
 
 export const App = () => {
   return (
@@ -8,5 +8,5 @@ export const App = () => {
       wrappers={[RouterWrapper, ErrorBoundary]}
       render={() => <AppRouter />}
     />
-  )
-}
+  );
+};

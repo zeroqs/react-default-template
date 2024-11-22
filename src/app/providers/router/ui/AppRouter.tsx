@@ -1,14 +1,14 @@
-import { Suspense, useLayoutEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Suspense, useLayoutEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
-import { routeConfig } from '../config'
+import { routeConfig } from '../config';
 
 export const AppRouter = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   useLayoutEffect(() => {
-    document.documentElement.scrollTo(0, 0)
-  }, [location.pathname])
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <>
@@ -20,5 +20,5 @@ export const AppRouter = () => {
         </Routes>
       </Suspense>
     </>
-  )
-}
+  );
+};
